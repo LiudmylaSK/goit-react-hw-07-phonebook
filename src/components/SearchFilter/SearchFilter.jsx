@@ -12,18 +12,16 @@ const handleFilterChange = event => {
     dispatch(setFilter(event.target.value));
   };
 
-return (
-  <label className={css.labelFilter} htmlFor="filterInput">
-    Find contacts by name
-    <input
-      id="filterInput"
-      className={css.inputFilter}
-      type="text"
-      value={filter}
-      onChange={handleFilterChange}
-      placeholder="Filter by name..."
-    />
-  </label>
-);
-
+  return (
+    <label className={css.labelFilter}>
+      Find contacts by name
+      <input
+        className={css.inputFilter}
+        type="text"
+        value={filter}
+        onChange={handleFilterChange}
+        placeholder="Filter by name..."
+      />
+    </label>
+  );
 };

@@ -9,11 +9,6 @@ const handlePending = state => {
   state.isLoading = true;
 };
 
-const handleRejected = (state, { error }) => {
-  state.isLoading = false;
-  state.error = error;
-};
-
 const handleFetchFulfilled = (state, { payload }) => {
   state.items = payload;
   state.isLoading = false;
@@ -27,10 +22,14 @@ const handleAddFulfilled = (state, { payload }) => {
 };
 
 const handleDeleteFulfilled = (state, { payload }) => {
-  state.items = state.items.filter(contact => contact.id !== payload.id);
-
+  state.items = state.items.filter(item => item.id !== payload);
   state.isLoading = false;
   state.error = null;
+};
+
+const handleRejected = (state, { error }) => {
+  state.isLoading = false;
+  state.error = error;
 };
 
 const contactsSlice = createSlice({
