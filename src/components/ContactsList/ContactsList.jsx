@@ -12,10 +12,10 @@ export function ContactsList() {
 
   return (
     <ul className={css.contactsList}>
-      {visibleContacts.map(({ id, name, number }) => {
+      {visibleContacts.map(({ id, name, phone }) => {
         return (
           <li key={id} className={css.listItem}>
-            {name}: <span className={css.listItemNumber}>{number}</span>
+            {name}: <span className={css.listItemNumber}>{phone}</span>
             <button
               className={css.buttonDeleteItem}
               type="button"
